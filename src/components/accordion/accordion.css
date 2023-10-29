@@ -1,0 +1,106 @@
+.accordion-container {
+    width: 400px;
+    background-color: #fff;
+    padding: 15px 15px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #212121;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+    background-color: white;
+}
+
+.accordion {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 16px;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+.icon-open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    margin: 10px 0;
+}
+
+.field label {
+    font-weight: bold;
+}
+
+.field input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.input_field {
+    width: auto;
+    height: 40px;
+    padding: 0 0 0 10px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    filter: drop-shadow(0px 1px 0px #efefef) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+    margin-top: 5px;
+    background-color: #f3f4f6;
+}
+
+.input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #242424;
+    background-color: transparent;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.delete-button,
+.cancel-button,
+.save-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-button,
+.save-button {
+    background-color: #3498db;
+}

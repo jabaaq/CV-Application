@@ -1,4 +1,5 @@
 import './resume.css';
+import { Component } from 'react';
 import { ContactsItem } from '../contacts-item/contacts-item';
 import { EducationItem } from '../education-item/education-item';
 import { ExperienceItem } from '../experience-item/experience-item';

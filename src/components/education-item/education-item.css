@@ -1,0 +1,32 @@
+.education-details {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    position: relative;
+    right: 2.5em
+}
+
+.education-left-side {
+    width: 40%;
+}
+
+
+.education-right-side {
+    width: 100%
+}
+
+.added-education-information {
+    list-style-type: none;
+    width: 100%;
+}
+
+.information-li {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    margin: 10px 0;
+}

@@ -52,7 +52,6 @@
     border: 7px;
 }
 
-.education-details,
 .experience-details {
     display: flex;
     justify-content: space-evenly;
@@ -65,8 +64,7 @@
     right: 95 px;
 }
 
-.experience-left-side,
-.education-left-side {
+.experience-left-side {
     width: 30%;
 }
 

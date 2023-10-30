@@ -23,7 +23,7 @@ function PersonalInformation() {
         />
         <label htmlFor='phoneNumber'>Phone number</label>
         <input
-          type='text'
+          type='number'
           id='phoneNumber'
           className='input_field'
           name='phoneNumber'

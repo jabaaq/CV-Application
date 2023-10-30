@@ -1,4 +1,5 @@
 import './resume.css';
+import { EducationItem } from '../education-item/education-item';
 
 function Resume() {
   return (
@@ -14,18 +15,9 @@ function Resume() {
       <div className='resume-education'>
         <div className='education-header'>Education</div>
         <div className='education-details'>
-          <div className='education-left-side'>
-            <div className='education-start-end-date'>{`${'08-2020'} - ${'08-2023'}`}</div>
-            <div className='education-location'>New York City, US</div>
-          </div>
-          <div className='education-right-side'>
-            <div className='education-school'>
-              <strong>London City University</strong>
-            </div>
-            <div className='education-degree'>
-              Bachelor of Science in Computer Science
-            </div>
-          </div>
+          <ul className='added-education-information'>
+            <EducationItem />
+          </ul>
         </div>
       </div>
       <div className='resume-experience'>

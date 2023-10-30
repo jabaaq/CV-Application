@@ -10,12 +10,19 @@ function PracticalExperience() {
     { label: 'End Date', placeholder: 'Enter End Date' },
     { label: 'Location (optional)', placeholder: 'Enter Location' },
   ];
+
+  const descriptionForArea = {
+    label: 'Description',
+    placeholder: 'Enter description',
+  };
+
   return (
     <div className='input-opening-container space-between'>
       <Accordion
         name={'Experience'}
         fields={experienceFields}
         fieldIcon={mdiBriefcaseVariant}
+        textArea={descriptionForArea}
       />
     </div>
   );

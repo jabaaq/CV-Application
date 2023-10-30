@@ -3,7 +3,7 @@ import './accordion.css';
 import Icon from '@mdi/react';
 import { mdiSchool } from '@mdi/js';
 
-const Accordion = ({ name, fields, fieldIcon }) => {
+const Accordion = ({ name, fields, fieldIcon, textArea }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -33,6 +33,19 @@ const Accordion = ({ name, fields, fieldIcon }) => {
                 />
               </div>
             ),
+          )}
+
+          {textArea && ( // //If the component has a textArea prop, then it will display. If not - the description textArea will not be displayed
+            <>
+              <label htmlFor='description'>{textArea.label}</label>
+              <textarea
+                name='description'
+                placeholder={textArea.placeholder}
+                id='description'
+                cols='20'
+                rows='10'
+              ></textarea>
+            </>
           )}
           <div className='button-container'>
             <button className='delete-button'>Delete</button>

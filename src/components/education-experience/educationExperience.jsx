@@ -1,5 +1,6 @@
 import './educationExperience.css';
 import Accordion from '../accordion/accordion';
+import { mdiSchool } from '@mdi/js';
 
 function EducationExperience() {
   const educationFields = [
@@ -12,7 +13,11 @@ function EducationExperience() {
 
   return (
     <div className='left-side education-container'>
-      <Accordion name={'Education'} fields={educationFields} />
+      <Accordion
+        name={'Education'}
+        fields={educationFields}
+        fieldIcon={mdiSchool}
+      />
     </div>
   );
 }

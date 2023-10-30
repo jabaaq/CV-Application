@@ -3,7 +3,7 @@ import './accordion.css';
 import Icon from '@mdi/react';
 import { mdiSchool } from '@mdi/js';
 
-const Accordion = ({ name, fields }) => {
+const Accordion = ({ name, fields, fieldIcon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -13,7 +13,7 @@ const Accordion = ({ name, fields }) => {
   return (
     <div className='accordion-container accordion'>
       <div className='accordion-header' onClick={toggleAccordion}>
-        <Icon path={mdiSchool} size={1} />
+        <Icon path={fieldIcon} size={1} />
         <h2>{name}</h2>
         <i className={`icon ${isOpen ? 'icon-open' : 'icon-close'}`}>&#9660;</i>
       </div>

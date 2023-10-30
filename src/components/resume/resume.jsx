@@ -1,5 +1,6 @@
 import './resume.css';
 import { EducationItem } from '../education-item/education-item';
+import { ExperienceItem } from '../experience-item/experience-item';
 
 function Resume() {
   return (
@@ -17,27 +18,20 @@ function Resume() {
         <div className='education-details'>
           <ul className='added-education-information'>
             <EducationItem />
+            <EducationItem />
           </ul>
         </div>
       </div>
       <div className='resume-experience'>
         <div className='experience-header'>Professional Experience</div>
         <div className='experience-details'>
-          <div className='experience-left-side'>
-            <div className='experience-start-end-date'>{`${'08-2020'} - ${'08-2023'}`}</div>
-            <div className='experience-location'>Berlin, Germany</div>
-          </div>
-          <div className='experience-right-side'>
-            <div className='experience-school'>
-              <strong>Black Mesa Labs</strong>
-            </div>
-            <div className='experience-description'>
-              Supported senior researchers on accessibility standards for the
-              open web. Created and usability tested wireframes and prototypes.
-              Produced interactive documentation for quick onboarding of new
-              researchers.
-            </div>
-          </div>
+          <ul className='added-experience-information'>
+            <ExperienceItem />
+            <ExperienceItem />
+            <ExperienceItem />
+            <ExperienceItem />
+            <ExperienceItem />
+          </ul>
         </div>
       </div>
     </div>

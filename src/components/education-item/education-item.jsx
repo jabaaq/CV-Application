@@ -1,7 +1,7 @@
 import './education-item.css';
 
 function EducationItem() {
-  let className = 'information-li';
+  let className = 'education-li';
 
   return (
     <li className={className}>

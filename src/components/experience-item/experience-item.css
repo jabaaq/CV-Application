@@ -1,0 +1,32 @@
+.experience-details {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    position: relative;
+    right: 2.5em
+}
+
+.experience-left-side {
+    width: 40%;
+}
+
+
+.experience-right-side {
+    width: 100%
+}
+
+.added-experience-information {
+    list-style-type: none;
+    width: 100%;
+}
+
+.experience-li {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    margin: 20px 0;
+}

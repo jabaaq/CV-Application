@@ -23,10 +23,10 @@
     width: 100%;
 }
 
-.information-li {
+.education-li {
     display: flex;
     align-items: center;
     gap: 30px;
     flex-direction: row;
-    margin: 10px 0;
+    margin: 20px 0;
 }

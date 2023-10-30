@@ -1,5 +1,6 @@
-import 'practical-experience.css';
+import './practical-experience.css';
 import Accordion from '../accordion/accordion';
+import { mdiBriefcaseVariant } from '@mdi/js';
 
 function PracticalExperience() {
   const experienceFields = [
@@ -10,8 +11,12 @@ function PracticalExperience() {
     { label: 'Location (optional)', placeholder: 'Enter Location' },
   ];
   return (
-    <div className='left-side experience-container'>
-      <Accordion name={'Experience'} fields={experienceFields} />
+    <div className='left-side education-container'>
+      <Accordion
+        name={'Experience'}
+        fields={experienceFields}
+        fieldIcon={mdiBriefcaseVariant}
+      />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import './template-loader.css';
 
 function TemplateLoader() {
   return (
-    <div className='left-side template form-container'>
+    <div className='template form-container space-between'>
       {/* <button className='load-example-btn'>Load Example</button> */}
       <button role='button' className='load-example-btn'>
         Load Example

@@ -6,6 +6,25 @@ body {
   text-align: center;
 }
 
+.space-between {
+  margin-bottom: 30px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resume-side {
+  margin: 30px;
+}
+
+.edit-side {
+  margin: 30px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -11,7 +11,7 @@ function PracticalExperience() {
     { label: 'Location (optional)', placeholder: 'Enter Location' },
   ];
   return (
-    <div className='left-side education-container'>
+    <div className='input-opening-container space-between'>
       <Accordion
         name={'Experience'}
         fields={experienceFields}

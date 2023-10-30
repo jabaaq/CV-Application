@@ -2,7 +2,7 @@ import './personal-Information.css';
 
 function PersonalInformation() {
   return (
-    <div className='left-side personal-information-container'>
+    <div className='personal-information-container space-between'>
       <fieldset className='information-fields'>
         <h2>Personal Information</h2>
         <label htmlFor='fullName'>Full name</label>

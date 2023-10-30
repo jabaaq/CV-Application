@@ -12,7 +12,7 @@ function EducationExperience() {
   ];
 
   return (
-    <div className='left-side education-container'>
+    <div className='input-opening-container space-between'>
       <Accordion
         name={'Education'}
         fields={educationFields}

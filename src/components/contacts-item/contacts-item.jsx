@@ -12,17 +12,23 @@ class ContactsItem extends Component {
   }
 
   render() {
+    const { fullName, email, phoneNumber, address, setInformation } =
+      this.props;
     return (
       <div className='contacts-details'>
         <div className='resume-name'>
-          <h1>James Rodriges</h1>
+          <h1>{fullName}</h1>
         </div>
         <div className='resume-contacts'>
-          <h3>
-            {<Icon path={mdiEmail} size={1} />} josephine.meyers@mail.co.uk
+          <h3 value={fullName}>
+            {<Icon path={mdiEmail} size={1} />} {email}
           </h3>
-          <h3>{<Icon path={mdiPhoneMessage} size={1} />} +44 3245 5521 5521</h3>
-          <h3>{<Icon path={mdiMapMarker} size={1} />} London, UK</h3>
+          <h3>
+            {<Icon path={mdiPhoneMessage} size={1} />} {phoneNumber}
+          </h3>
+          <h3>
+            {<Icon path={mdiMapMarker} size={1} />} {address}
+          </h3>
         </div>
       </div>
     );

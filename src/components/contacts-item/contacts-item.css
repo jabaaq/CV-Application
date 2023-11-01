@@ -28,12 +28,3 @@
     justify-content: center;
     gap: 5px;
 }
-
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}

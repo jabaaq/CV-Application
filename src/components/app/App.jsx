@@ -22,29 +22,34 @@ class App extends Component {
       endDate: '',
       location: '',
       description: '',
+
+      //state for the experience form
+      companyName: '',
+      positionTitle: '',
+      workStartDate: '',
+      workEndDate: '',
+      workLocation: '',
+      workDescription: '',
     };
   }
 
   setInformation = (e) => {
-    const inputFieldName = e.target.name; //Since I have several fields, I compare field name and field value. that the
-    const inputValue = e.target.value; //entered information is correctly recorded in the value of each field
     this.setState({
-      [inputFieldName]: inputValue,
+      [e.target.name]: e.target.value,
     });
   };
 
   render() {
+    const { fullName, email, phoneNumber, address } = this.state;
+    const { school, degree, startDate, endDate, location, description } =
+      this.state;
     const {
-      fullName,
-      email,
-      phoneNumber,
-      address,
-      school,
-      degree,
-      startDate,
-      endDate,
-      location,
-      description,
+      companyName,
+      positionTitle,
+      workStartDate,
+      workEndDate,
+      workLocation,
+      workDescription,
     } = this.state;
 
     return (
@@ -67,7 +72,15 @@ class App extends Component {
             description={description}
             setInformation={this.setInformation}
           />
-          <PracticalExperience />
+          <PracticalExperience
+            companyName={companyName}
+            positionTitle={positionTitle}
+            workStartDate={workStartDate}
+            workEndDate={workEndDate}
+            workLocation={workLocation}
+            workDescription={workDescription}
+            setInformation={this.setInformation}
+          />
         </div>
         <div className='resume-side'>
           <Resume

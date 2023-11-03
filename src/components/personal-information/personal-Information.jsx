@@ -35,7 +35,7 @@ class PersonalInformation extends Component {
           />
           <label htmlFor='phoneNumber'>Phone number</label>
           <input
-            type='number'
+            type='text'
             id='phoneNumber'
             className='input_field'
             name='phoneNumber'

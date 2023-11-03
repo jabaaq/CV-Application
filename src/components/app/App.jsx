@@ -14,6 +14,14 @@ class App extends Component {
       email: '',
       phoneNumber: '',
       address: '',
+
+      //state for the education form
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+      description: '',
     };
   }
 
@@ -26,7 +34,19 @@ class App extends Component {
   };
 
   render() {
-    const { fullName, email, phoneNumber, address } = this.state;
+    const {
+      fullName,
+      email,
+      phoneNumber,
+      address,
+      school,
+      degree,
+      startDate,
+      endDate,
+      location,
+      description,
+    } = this.state;
+
     return (
       <div className='app'>
         <div className='edit-side'>
@@ -38,7 +58,15 @@ class App extends Component {
             address={address}
             setInformation={this.setInformation}
           />
-          <EducationExperience />
+          <EducationExperience
+            school={school}
+            degree={degree}
+            startDate={startDate}
+            endDate={endDate}
+            location={location}
+            description={description}
+            setInformation={this.setInformation}
+          />
           <PracticalExperience />
         </div>
         <div className='resume-side'>
@@ -47,7 +75,6 @@ class App extends Component {
             email={email}
             phoneNumber={phoneNumber}
             address={address}
-            setInformation={this.setInformation}
           />
         </div>
       </div>

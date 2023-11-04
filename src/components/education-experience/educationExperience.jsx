@@ -6,6 +6,9 @@ import { Component } from 'react';
 class EducationExperience extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      source: 'Education',
+    };
   }
 
   render() {
@@ -16,7 +19,7 @@ class EducationExperience extends Component {
       startDate,
       endDate,
       location,
-      addEducationItem,
+      onSubmitForm,
       clearForm,
     } = this.props;
 
@@ -60,8 +63,9 @@ class EducationExperience extends Component {
           fields={educationFields}
           fieldIcon={mdiSchool}
           setInformation={setInformation}
-          addEducationItem={(e) => {
-            addEducationItem(e, school, degree, startDate, endDate, location);
+          source={this.state.source}
+          onSubmitForm={(e) => {
+            onSubmitForm(e, school, degree, startDate, endDate, location);
           }}
           clearForm={clearForm}
         />

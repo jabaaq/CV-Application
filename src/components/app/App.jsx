@@ -30,6 +30,7 @@ class App extends Component {
       workLocation: '',
       workDescription: '',
 
+      //education data
       educationData: [
         {
           school: 'London City University',
@@ -49,19 +50,26 @@ class App extends Component {
         },
       ],
 
+      //experience data
+      experienceData: [
+        {
+          companyName: 'Umbrella Inc.',
+          positionTitle: 'UX & UI Designer',
+          workStartDate: '08/2020',
+          workEndDate: 'present',
+          workLocation: 'New York City, US',
+          workDescription:
+            'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android',
+          id: 1,
+        },
+      ],
+
       // data: [
       //   {
       //     fullName: 'Thomas Parker',
       //     email: 'thomasParker123@test.com',
       //     phoneNumber: '+1 234 56 78 90',
-      //     companyName: 'Umbrella Inc.',
-      //     positionTitle: 'UX & UI Designer',
-      //     workStartDate: '08/2020',
-      //     workEndDate: 'present',
-      //     workLocation: 'New York City, US',
-      //     workDescription:
-      //       'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android',
-      //   },
+      //   }
       // ],
     };
   }
@@ -71,7 +79,7 @@ class App extends Component {
     });
   };
 
-  addEducationItem = (e, school, degree, startDate, endDate, location) => {
+  handleEducationSubmit = (e, school, degree, startDate, endDate, location) => {
     e.preventDefault();
     this.setState(({ educationData }) => {
       const newEducationData = [...educationData];
@@ -84,6 +92,42 @@ class App extends Component {
         id: Math.floor(Math.random() * 1000),
       });
       return { educationData: newEducationData };
+    });
+  };
+
+  handleExperienceSubmit = (
+    e,
+    companyName,
+    positionTitle,
+    workStartDate,
+    workEndDate,
+    workLocation,
+    workDescription,
+  ) => {
+    e.preventDefault();
+    this.setState(({ experienceData }) => {
+      const newExperienceData = [...experienceData];
+      newExperienceData.push({
+        companyName: companyName,
+        positionTitle: positionTitle,
+        workStartDate: workStartDate,
+        workEndDate: workEndDate,
+        workLocation: workLocation,
+        workDescription: workDescription,
+        id: Math.floor(Math.random() * 1000),
+      });
+      return { experienceData: newExperienceData };
+    });
+  };
+
+  clearExperienceForm = () => {
+    this.setState({
+      companyName: '',
+      positionTitle: '',
+      workStartDate: '',
+      workEndDate: '',
+      workLocation: '',
+      workDescription: '',
     });
   };
 
@@ -109,7 +153,7 @@ class App extends Component {
       workDescription,
     } = this.state;
 
-    const { educationData } = this.state;
+    const { educationData, experienceData } = this.state;
 
     return (
       <div className='app'>
@@ -129,7 +173,7 @@ class App extends Component {
             endDate={endDate}
             location={location}
             setInformation={this.setInformation}
-            addEducationItem={this.addEducationItem}
+            onSubmitForm={this.handleEducationSubmit}
             clearForm={this.clearForm}
           />
           <PracticalExperience
@@ -140,6 +184,8 @@ class App extends Component {
             workLocation={workLocation}
             workDescription={workDescription}
             setInformation={this.setInformation}
+            onSubmitExperienceForm={this.handleExperienceSubmit}
+            clearExperienceForm={this.clearExperienceForm}
           />
         </div>
         <div className='resume-side'>
@@ -149,7 +195,9 @@ class App extends Component {
             phoneNumber={phoneNumber}
             address={address}
             educationData={educationData}
-            onSubmitForm={this.addEducationItem}
+            experienceData={experienceData}
+            onSubmitForm={this.handleEducationSubmit}
+            onSubmitExperienceForm={this.handleExperienceSubmit}
           />
         </div>
       </div>

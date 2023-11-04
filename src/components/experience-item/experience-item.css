@@ -30,3 +30,8 @@
     flex-direction: row;
     margin: 20px 0;
 }
+
+.experience-school {
+    display: flex;
+    flex-direction: column;
+}

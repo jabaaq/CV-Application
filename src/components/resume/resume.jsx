@@ -9,8 +9,10 @@ function Resume({
   phoneNumber,
   address,
   setInformation,
+  //for education
   educationData,
-  addEducationItem,
+  //for experience
+  experienceData,
 }) {
   return (
     <div className='resume-paper'>
@@ -35,7 +37,6 @@ function Resume({
                   startDate={item.startDate}
                   endDate={item.endDate}
                   location={item.location}
-                  addEducationItem={addEducationItem}
                   key={item.id}
                 />
               );
@@ -47,7 +48,19 @@ function Resume({
         <div className='experience-header'>Professional Experience</div>
         <div className='experience-details'>
           <ul className='added-experience-information'>
-            <ExperienceItem />
+            {experienceData.map((item) => {
+              return (
+                <ExperienceItem
+                  companyName={item.companyName}
+                  positionTitle={item.positionTitle}
+                  workStartDate={item.workStartDate}
+                  workEndDate={item.workEndDate}
+                  workLocation={item.workLocation}
+                  workDescription={item.workDescription}
+                  key={item.id}
+                />
+              );
+            })}
           </ul>
         </div>
       </div>

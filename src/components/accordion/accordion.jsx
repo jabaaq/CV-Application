@@ -23,15 +23,28 @@ class Accordion extends Component {
       fieldIcon,
       textArea,
       setInformation,
-      clearForm,
       //education information
-      addEducationItem,
+      onSubmitForm,
       school,
       degree,
       startDate,
       endDate,
       location,
+      clearForm,
+
+      //experience information
+      onSubmitExperienceForm,
+      companyName,
+      positionTitle,
+      workStartDate,
+      workEndDate,
+      workLocation,
+      workDescription,
+      clearExperienceForm,
+
+      source,
     } = this.props;
+
     const { isOpen } = this.state;
 
     return (
@@ -59,19 +72,6 @@ class Accordion extends Component {
               </div>
             ))}
 
-            {textArea && (
-              <>
-                <label htmlFor='description'>{textArea.label}</label>
-                <textarea
-                  name='description'
-                  placeholder={textArea.placeholder}
-                  id='description'
-                  cols='20'
-                  rows='10'
-                  value={textArea.value}
-                  onChange={setInformation}></textarea>
-              </>
-            )}
             <div className='button-container'>
               <button className='delete-button'>Delete</button>
               <button className='cancel-button'>Cancel</button>
@@ -79,15 +79,28 @@ class Accordion extends Component {
                 type='submit'
                 className='save-button'
                 onClick={(e) => {
-                  addEducationItem(
-                    e,
-                    school,
-                    degree,
-                    startDate,
-                    endDate,
-                    location,
-                  );
-                  clearForm();
+                  if (source === 'Education') {
+                    onSubmitForm(
+                      e,
+                      school,
+                      degree,
+                      startDate,
+                      endDate,
+                      location,
+                    );
+                    clearForm();
+                  } else if (source === 'Experience') {
+                    onSubmitExperienceForm(
+                      e,
+                      companyName,
+                      positionTitle,
+                      workStartDate,
+                      workEndDate,
+                      workLocation,
+                      workDescription,
+                    );
+                    clearExperienceForm();
+                  }
                 }}>
                 Submit
               </button>

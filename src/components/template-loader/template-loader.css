@@ -216,18 +216,33 @@
     }
 }
 
-@media print {
 
-    /* Define styles for printing */
-    body {
+@media print {
+    .resume-paper {
         background-color: white;
         color: black;
         -webkit-print-color-adjust: exact;
     }
 
-    /* Hide elements you don't want to print */
     .edit-side,
     .edit-side * {
         display: none;
+    }
+
+    @page {
+        margin: 0mm;
+    }
+}
+
+@media print and (page) {
+    .resume-paper {
+        background-color: white;
+        color: black;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .edit-side,
+    .edit-side * {
+        display: block;
     }
 }

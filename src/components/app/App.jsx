@@ -21,7 +21,6 @@ class App extends Component {
       startDate: '',
       endDate: '',
       location: '',
-      description: '',
 
       //state for the experience form
       companyName: '',
@@ -30,19 +29,77 @@ class App extends Component {
       workEndDate: '',
       workLocation: '',
       workDescription: '',
+
+      educationData: [
+        {
+          school: 'London City University',
+          degree: 'Bachelors in Economics',
+          startDate: '08/2020',
+          endDate: 'present',
+          location: 'New York City,US',
+          id: 1,
+        },
+        {
+          school: 'Georgian technical university',
+          degree: 'Information Technologies',
+          startDate: '08/2020',
+          endDate: 'present',
+          location: 'Georgia, Tbilisi',
+          id: 2,
+        },
+      ],
+
+      // data: [
+      //   {
+      //     fullName: 'Thomas Parker',
+      //     email: 'thomasParker123@test.com',
+      //     phoneNumber: '+1 234 56 78 90',
+      //     companyName: 'Umbrella Inc.',
+      //     positionTitle: 'UX & UI Designer',
+      //     workStartDate: '08/2020',
+      //     workEndDate: 'present',
+      //     workLocation: 'New York City, US',
+      //     workDescription:
+      //       'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android',
+      //   },
+      // ],
     };
   }
-
   setInformation = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
+  addEducationItem = (e, school, degree, startDate, endDate, location) => {
+    e.preventDefault();
+    this.setState(({ educationData }) => {
+      const newEducationData = [...educationData];
+      newEducationData.push({
+        school: school,
+        degree: degree,
+        startDate: startDate,
+        endDate: endDate,
+        location: location,
+        id: Math.floor(Math.random() * 1000),
+      });
+      return { educationData: newEducationData };
+    });
+  };
+
+  clearForm = () => {
+    this.setState({
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+    });
+  };
+
   render() {
     const { fullName, email, phoneNumber, address } = this.state;
-    const { school, degree, startDate, endDate, location, description } =
-      this.state;
+    const { school, degree, startDate, endDate, location } = this.state;
     const {
       companyName,
       positionTitle,
@@ -51,6 +108,8 @@ class App extends Component {
       workLocation,
       workDescription,
     } = this.state;
+
+    const { educationData } = this.state;
 
     return (
       <div className='app'>
@@ -69,8 +128,9 @@ class App extends Component {
             startDate={startDate}
             endDate={endDate}
             location={location}
-            description={description}
             setInformation={this.setInformation}
+            addEducationItem={this.addEducationItem}
+            clearForm={this.clearForm}
           />
           <PracticalExperience
             companyName={companyName}
@@ -88,6 +148,8 @@ class App extends Component {
             email={email}
             phoneNumber={phoneNumber}
             address={address}
+            educationData={educationData}
+            onSubmitForm={this.addEducationItem}
           />
         </div>
       </div>

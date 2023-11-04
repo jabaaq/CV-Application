@@ -17,7 +17,21 @@ class Accordion extends Component {
   };
 
   render() {
-    const { name, fields, fieldIcon, textArea, setInformation } = this.props;
+    const {
+      name,
+      fields,
+      fieldIcon,
+      textArea,
+      setInformation,
+      clearForm,
+      //education information
+      addEducationItem,
+      school,
+      degree,
+      startDate,
+      endDate,
+      location,
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -61,7 +75,20 @@ class Accordion extends Component {
             <div className='button-container'>
               <button className='delete-button'>Delete</button>
               <button className='cancel-button'>Cancel</button>
-              <button type='submit' className='save-button'>
+              <button
+                type='submit'
+                className='save-button'
+                onClick={(e) => {
+                  addEducationItem(
+                    e,
+                    school,
+                    degree,
+                    startDate,
+                    endDate,
+                    location,
+                  );
+                  clearForm();
+                }}>
                 Submit
               </button>
             </div>

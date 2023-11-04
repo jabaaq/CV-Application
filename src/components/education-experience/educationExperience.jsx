@@ -16,7 +16,8 @@ class EducationExperience extends Component {
       startDate,
       endDate,
       location,
-      description,
+      addEducationItem,
+      clearForm,
     } = this.props;
 
     const educationFields = [
@@ -52,21 +53,17 @@ class EducationExperience extends Component {
       },
     ];
 
-    const descriptionForArea = {
-      label: 'Description',
-      placeholder: 'Enter description',
-      value: description,
-      name: 'description',
-    };
-
     return (
       <div className='input-opening-container space-between'>
         <Accordion
           name={'Education'}
           fields={educationFields}
           fieldIcon={mdiSchool}
-          textArea={descriptionForArea}
           setInformation={setInformation}
+          addEducationItem={(e) => {
+            addEducationItem(e, school, degree, startDate, endDate, location);
+          }}
+          clearForm={clearForm}
         />
       </div>
     );

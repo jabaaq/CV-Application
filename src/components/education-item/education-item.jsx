@@ -1,21 +1,18 @@
 import './education-item.css';
 
-function EducationItem() {
+function EducationItem({ school, degree, startDate, endDate, location }) {
   let className = 'education-li';
-
   return (
     <li className={className}>
       <div className='education-left-side'>
-        <div className='education-start-end-date'>{`${'08-2020'} - ${'08-2023'}`}</div>
-        <div className='education-location'>New York City, USasda</div>
+        <div className='education-start-end-date'>{`${startDate} - ${endDate}`}</div>
+        <div className='education-location'>{location}</div>
       </div>
       <div className='education-right-side'>
         <div className='education-school'>
-          <strong>London City University</strong>
+          <strong>{school}</strong>
         </div>
-        <div className='education-degree'>
-          Bachelor of Science in Computer Science
-        </div>
+        <div className='education-degree'>{degree}</div>
       </div>
     </li>
   );

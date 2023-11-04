@@ -53,24 +53,16 @@ class App extends Component {
       //experience data
       experienceData: [
         {
-          companyName: 'Umbrella Inc.',
-          positionTitle: 'UX & UI Designer',
+          companyName: 'Tech Innovators, Inc',
+          positionTitle: 'Senior Software Developer',
           workStartDate: '08/2020',
-          workEndDate: 'present',
-          workLocation: 'New York City, US',
+          workEndDate: '01/2022',
+          workLocation: 'San Francisco, CA',
           workDescription:
-            'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android',
+            'Led the development of a high-traffic e-commerce platform, improving website performance by 40% and enhancing the user experience. Collaborated with cross-functional teams to design and implement new features and enhancements. Conducted code reviews and mentored junior developers to improve code quality and team productivity.',
           id: 1,
         },
       ],
-
-      // data: [
-      //   {
-      //     fullName: 'Thomas Parker',
-      //     email: 'thomasParker123@test.com',
-      //     phoneNumber: '+1 234 56 78 90',
-      //   }
-      // ],
     };
   }
   setInformation = (e) => {
@@ -152,6 +144,17 @@ class App extends Component {
     });
   };
 
+  loadExampleData = (example) => {
+    this.setState({
+      fullName: example.fullName,
+      email: example.email,
+      phoneNumber: example.phoneNumber,
+      address: example.address,
+      educationData: example.educationData,
+      experienceData: example.experienceData,
+    });
+  };
+
   render() {
     const { fullName, email, phoneNumber, address } = this.state;
     const { school, degree, startDate, endDate, location } = this.state;
@@ -169,7 +172,10 @@ class App extends Component {
     return (
       <div className='app'>
         <div className='edit-side'>
-          <TemplateLoader clearAllData={this.clearAllData} />
+          <TemplateLoader
+            clearAllData={this.clearAllData}
+            exampleData={this.loadExampleData}
+          />
           <PersonalInformation
             fullName={fullName}
             email={email}

@@ -15,7 +15,7 @@
 
 
 .experience-right-side {
-    width: 100%
+    width: 140%
 }
 
 .added-experience-information {
@@ -29,6 +29,10 @@
     gap: 30px;
     flex-direction: row;
     margin: 20px 0;
+}
+
+.experience-school span {
+    margin-bottom: 5px;
 }
 
 .experience-school {

@@ -73,8 +73,32 @@ class Accordion extends Component {
             ))}
 
             <div className='button-container'>
-              <button className='delete-button'>Delete</button>
-              <button className='cancel-button'>Cancel</button>
+              <button
+                className='delete-button'
+                onClick={() => {
+                  if (source === 'Education') {
+                    clearForm();
+                  } else if (source === 'Experience') {
+                    clearExperienceForm();
+                  }
+                }}>
+                Delete
+              </button>
+              <button
+                className='cancel-button'
+                onClick={() => {
+                  if (source === 'Education') {
+                    this.setState({
+                      isOpen: false,
+                    });
+                  } else if (source === 'Experience') {
+                    this.setState({
+                      isOpen: false,
+                    });
+                  }
+                }}>
+                Cancel
+              </button>
               <button
                 type='submit'
                 className='save-button'

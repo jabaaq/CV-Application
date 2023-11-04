@@ -21,7 +21,8 @@ body {
 .resume-header {
     position: relative;
     width: 100%;
-    background-color: var(--main-color);
+    /* background-color: #0e394e; */
+    background: #0e394e;
     height: 10em;
     color: white;
     display: flex;

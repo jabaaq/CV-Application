@@ -141,6 +141,17 @@ class App extends Component {
     });
   };
 
+  clearAllData = () => {
+    this.setState({
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      address: '',
+      educationData: [],
+      experienceData: [],
+    });
+  };
+
   render() {
     const { fullName, email, phoneNumber, address } = this.state;
     const { school, degree, startDate, endDate, location } = this.state;
@@ -158,7 +169,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div className='edit-side'>
-          <TemplateLoader />
+          <TemplateLoader clearAllData={this.clearAllData} />
           <PersonalInformation
             fullName={fullName}
             email={email}

@@ -113,6 +113,9 @@ class Accordion extends Component {
                       location,
                     );
                     clearForm();
+                    this.setState({
+                      isOpen: false,
+                    });
                   } else if (source === 'Experience') {
                     onSubmitExperienceForm(
                       e,
@@ -124,6 +127,9 @@ class Accordion extends Component {
                       workDescription,
                     );
                     clearExperienceForm();
+                    this.setState({
+                      isOpen: false,
+                    });
                   }
                 }}>
                 Submit

@@ -4,6 +4,7 @@ import { TemplateLoader } from '../template-loader/template-loader';
 import { PersonalInformation } from '../personal-information/personal-Information';
 import { EducationExperience } from '../education-experience/educationExperience';
 import { PracticalExperience } from '../practical-experience/practical-experience';
+import { CreatedBy } from '../createdBy/createdBy';
 import { Resume } from '../resume/resume';
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
           id: 1,
         },
         {
-          school: 'Georgian technical university',
+          school: 'Georgian Technical university',
           degree: 'Information Technologies',
           startDate: '08/2020',
           endDate: 'present',
@@ -204,6 +205,7 @@ class App extends Component {
             onSubmitExperienceForm={this.handleExperienceSubmit}
             clearExperienceForm={this.clearExperienceForm}
           />
+          <CreatedBy />
         </div>
         <div className='resume-side'>
           <Resume
